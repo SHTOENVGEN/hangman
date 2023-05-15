@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>Hangman</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
-</head>
-<body>
-    <h1>Hangman</h1>
-    <div id="gallows">
-        <img style="padding-left: 70px" src="https://mitchum.blog/games/hangman/img/hangman0.png" alt="hangman-gallow">
-    </div>
-    <div id="word"></div>
-    <br>
-    <div id="controls">
+    <link rel="stylesheet" href="style.css">
+          <script src="script2.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Movie Hangman</h1>
+      <div id="gallows">
+        <img style="padding-left: 70px" id="hangmanImage" src="https://mitchum.blog/games/hangman/img/hangman0.png">
+      </div>
+      <div id="word"></div>
+      <br>
+      <div id="controls">
         <input type="text" id="guessBox">
         <button id="guessWordButton" class="button" onclick="guessWord( game )">Guess Word</button>
         <button id="newGameButton" class="button" onclick="newGame();">New Game</button>
         <br>
         <br>
-    </div>
-    <div id="guesses"></div>
-</body>
+      </div>
+      <br>
+      <div id="guesses"></div>
+    </main>   
+   
+  </body>
 </html>

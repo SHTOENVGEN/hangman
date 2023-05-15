@@ -295,7 +295,32 @@ function listenForInput( game ) {
 
         if ( event.target.id !== "guessBox" && isLetter ) {
             letter = String.fromCharCode( event.keyCode );
-            
+        } else if (event.keyCode === ENTER && gameOver) {
+            newGameButton.click();
+        } else if (event.keyCode === ENTER && guessBox.value !== "") {
+            guessWordButton.click();
         }
+        guessLetter( letter );
     }
+
+    document.addEventListener('keydown', handleKeyPress );
+    document.body.addEventListener('click', handleClick );
+}
+
+function guessWord( game ) {
+    let gameStillGoing = !game.isWon() && !game.isLost();
+    let guessedWord = document.getElementById('guessBox').value;
+    if ( gameStillGoing ) {
+        game.guessWord( guessedWord );
+        render( game );
+    }
+}
+
+function render( game ) {
+    document.getElementById("word").innerHTML = game.getMaskedWord();
+    document.getElementById("guesses").innerHTML = "";
+    game.getPossibleGuesses().forEach( function(guess) {
+        let innerHtml = "<span class='guess'>" + guess + "</span>";
+        document.getElementById("hangmanImage").src = ""
+    })
 }
